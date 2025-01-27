@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* globals.css */
+:root {
+  --role-admin: 99 102 241;   /* Indigo */
+  --role-optometrist: 16 185 129; /* Emerald */
+  --role-sales: 245 158 11; /* Amber */
+}
+
+.badge-admin { background-color: rgb(var(--role-admin)/0.1); color: rgb(var(--role-admin)); }
+.badge-optometrist { background-color: rgb(var(--role-optometrist)/0.1); color: rgb(var(--role-optometrist)); }
+.badge-sales { background-color: rgb(var(--role-sales)/0.1); color: rgb(var(--role-sales)); }

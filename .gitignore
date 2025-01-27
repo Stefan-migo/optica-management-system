@@ -1,0 +1,9 @@
+node_modules
+.next
+.env
+.env.local
+.supabase
+*.log
+.DS_Store
+dist/
+public/storage
