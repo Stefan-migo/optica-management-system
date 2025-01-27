@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-docs": "node scripts/generate_docs.js"
   },
   "dependencies": {
     "@supabase/auth-helpers-nextjs": "^0.10.0",
@@ -14,7 +15,9 @@
     "@supabase/supabase-js": "^2.48.1",
     "@tanstack/react-table": "^8.20.6",
     "@types/react-day-picker": "^5.2.1",
+    "child_process": "^1.0.2",
     "clsx": "^2.1.1",
+    "fs": "^0.0.1-security",
     "next": "15.1.6",
     "react": "^19.0.0",
     "react-day-picker": "^9.5.0",

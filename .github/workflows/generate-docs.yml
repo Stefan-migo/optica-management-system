@@ -1,0 +1,39 @@
+name: Generate Database Docs
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'migrations/**'  # Trigger only when migration files change
+
+jobs:
+  generate-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate documentation
+        env:
+          SUPABASE_HOST: ${{ secrets.SUPABASE_HOST }}
+          SUPABASE_DB: ${{ secrets.SUPABASE_DB }}
+          SUPABASE_USER: ${{ secrets.SUPABASE_USER }}
+          SUPABASE_PASSWORD: ${{ secrets.SUPABASE_PASSWORD }}
+        run: npm run generate-docs
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "CI/CD Bot"
+          git config --global user.email "ci-cd-bot@example.com"
+          git add database_docs.md
+          git commit -m "Update database documentation"
+          git push

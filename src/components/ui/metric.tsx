@@ -1,6 +1,6 @@
 // components/ui/metric.tsx
 'use client';
-import { cn } from "@/lib/utils"; // Add this import
+import { cn } from "@/lib/utils"; 
 
 export const Metric = ({
   className,
